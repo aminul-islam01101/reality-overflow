@@ -1,0 +1,44 @@
+{
+  // Theme
+  // "workbench.colorTheme": "Learn with Sumit Theme",
+
+  // config related to code formatting
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  },
+  "javascript.validate.enable": false, //disable all built-in syntax checking
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.tslint": true,
+    "source.organizeImports": true
+  },
+  "eslint.validate": ["typescript", "javascript"],
+
+  // emmet
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "cSpell.words": ["hamba", "nosql"],
+  "turboConsoleLog.logMessagePrefix": "🌼",
+  "turboConsoleLog.logMessageSuffix": "🌼",
+  "turboConsoleLog.insertEmptyLineBeforeLogMessage": false,
+  "turboConsoleLog.insertEmptyLineAfterLogMessage": true,
+  "turboConsoleLog.wrapLogMessage": true,
+  "turboConsoleLog.insertEnclosingClass": true,
+  "turboConsoleLog.delimiterInsideMessage": "🔥🔥",
+  "turboConsoleLog.quote": "'",
+  "turboConsoleLog.addSemicolonInTheEnd": true,
+
+  "yaml.schemas": {
+    "openapi:v3": "file:///e%3A/Code%20house/p%20Hero-6/level-2/Assignment/Assignment-3-noSql/noSql-hamba-hut/test.yaml"
+  }
+}
