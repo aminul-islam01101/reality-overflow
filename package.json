@@ -13,12 +13,12 @@
     "lint-prettier-fix": " pnpm prettier:fix  && pnpm lint",
     "lint-prettier-check": "pnpm lint:check && pnpm prettier:check",
     "lint-prettier": "pnpm lint-prettier-fix && pnpm lint-prettier-check"
-
   },
   "lint-staged": {
     "src/**/*.{ts,tsx,js}": "pnpm lint-prettier"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.26.1",
     "@radix-ui/react-slot": "^1.0.2",
     "@tailwindcss/typography": "^0.5.10",
     "class-variance-authority": "^0.7.0",
