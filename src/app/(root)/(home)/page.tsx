@@ -1,15 +1,40 @@
+import { auth } from '@clerk/nextjs';
 import Link from 'next/link';
 
+import QuestionCard from '@/components/cards/QuestionCard';
+import HomeFilters from '@/components/home/HomeFilters';
+import Filter from '@/components/shared/Filter';
+import NoResult from '@/components/shared/NoResult';
 import LocalSearchbar from '@/components/shared/search/LocalSearchbar';
 import { Button } from '@/components/ui/button';
-import Filter from '@/components/shared/Filter';
 import { HomePageFilters } from '@/constants/filters';
-import HomeFilters from '@/components/home/HomeFilters';
-import QuestionCard from '@/components/cards/QuestionCard';
-import NoResult from '@/components/shared/NoResult';
+import { getQuestions, getRecommendedQuestions } from '@/lib/actions/question.action';
+import { SearchParamsProps } from '@/types';
 
-export default function Home() {
+export default async function Home({ searchParams }: SearchParamsProps) {
+  const { userId } = auth();
   let result;
+  if (searchParams?.filter === 'recommended') {
+    if (userId) {
+      result = await getRecommendedQuestions({
+        userId,
+        searchQuery: searchParams.q,
+        page: searchParams.page ? +searchParams.page : 1,
+      });
+    } else {
+      result = {
+        questions: [],
+        isNext: false,
+      };
+    }
+  } else {
+    result = await getQuestions({
+      searchQuery: searchParams.q,
+      filter: searchParams.filter,
+      page: searchParams.page ? +searchParams.page : 1,
+    });
+  }
+
   return (
     <>
       <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
@@ -38,9 +63,9 @@ export default function Home() {
       </div>
       <HomeFilters />
       <div className="mt-10 flex w-full flex-col gap-6">
-        {/* {result?.questions?.length > 0 ?
+        {result?.questions?.length > 0 ? (
           result?.questions.map((question) => (
-            <QuestionCard 
+            <QuestionCard
               key={question._id}
               _id={question._id}
               title={question.title}
@@ -51,15 +76,15 @@ export default function Home() {
               answers={question.answers}
               createdAt={question.createdAt}
             />
-          )) */}
-        {/* :  */}
-        <NoResult
-          title="There’s no question to show"
-          description="Be the first to break the silence! 🚀 Ask a Question and kickstart the discussion. our query could be the next big thing others learn from. Get involved! 💡"
-          link="/ask-question"
-          linkTitle="Ask a Question"
-        />
-        {/* } */}
+          ))
+        ) : (
+          <NoResult
+            title="There’s no question to show"
+            description="Be the first to break the silence! 🚀 Ask a Question and kickstart the discussion. our query could be the next big thing others learn from. Get involved! 💡"
+            link="/ask-question"
+            linkTitle="Ask a Question"
+          />
+        )}
       </div>
     </>
   );
