@@ -10,15 +10,17 @@
     "lint:check": "eslint --ext .js,.ts,.tsx",
     "prettier:check": "prettier --ignore-path .gitignore --write \"src/**/*.+(js|ts|tsx|json)\"",
     "prettier:fix": "prettier --write \"src/**/*.+(js|ts|tsx|json)\"",
-    "lint-prettier-fix": " pnpm prettier:fix  && pnpm lint",
-    "lint-prettier-check": "pnpm lint:check && pnpm prettier:check",
-    "lint-prettier": "pnpm lint-prettier-fix && pnpm lint-prettier-check"
+    "lint-prettier-fix": " yarn prettier:fix  && yarn lint",
+    "lint-prettier-check": "yarn lint:check && yarn prettier:check",
+    "lint-prettier": "yarn lint-prettier-fix && yarn lint-prettier-check"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx,js}": "pnpm lint-prettier"
+    "src/**/*.{ts,tsx,js}": "yarn lint-prettier"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.26.1",
+    "@hookform/resolvers": "^3.3.2",
+    "@preact/signals-react": "^1.3.6",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-label": "^2.0.2",
@@ -37,8 +39,11 @@
     "query-string": "^8.1.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.47.0",
+    "svix": "^1.13.0",
     "tailwind-merge": "^2.0.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -49,7 +54,10 @@
     "eslint-config-next": "14.0.1",
     "eslint-config-prettier": "^9.0.0",
     "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-n": "^16.2.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-tailwindcss": "^3.13.0",
     "husky": "^8.0.0",
     "lint-staged": "^13.2.2",
