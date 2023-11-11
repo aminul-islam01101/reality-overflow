@@ -1,9 +1,8 @@
 'use client';
 import { ClerkProvider } from '@clerk/nextjs';
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import { ReactNode } from 'react';
 import { Provider } from 'react-redux';
-
-import { ThemeProvider } from './ThemeProvider';
 
 import { store } from '@/redux/store';
 
@@ -20,7 +19,15 @@ const Providers = ({ children }: { children: ReactNode }) => {
         }}
       >
         <Provider store={store}>
-          <ThemeProvider>{children}</ThemeProvider>
+          <NextThemesProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </NextThemesProvider>
+          {/* <ThemeProvider>{children}</ThemeProvider> */}
         </Provider>
       </ClerkProvider>
     </div>

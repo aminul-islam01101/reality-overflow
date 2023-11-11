@@ -5,7 +5,8 @@ import Link from 'next/link';
 import GlobalSearch from '../search/GlobalSearch';
 
 import MobileNav from './MobileNav';
-import Theme from './Theme';
+
+import { ThemeSwitcher } from '@/components/ui-utils/ThemeSwitcher';
 
 const Navbar = () => {
   return (
@@ -21,7 +22,8 @@ const Navbar = () => {
       <GlobalSearch />
 
       <div className="flex-between gap-5">
-        <Theme />
+        {/* <Theme /> */}
+        <ThemeSwitcher />
 
         <SignedIn>
           <UserButton
