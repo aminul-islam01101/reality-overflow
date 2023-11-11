@@ -1,6 +1,5 @@
 'use client';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Signal, signal } from '@preact/signals-react';
 import { Editor } from '@tinymce/tinymce-react';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
@@ -185,7 +184,7 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
                       'alignright alignjustify | bullist numlist',
                     content_style: 'body { font-family:Inter; font-size:16px }',
                     skin: mode === 'dark' ? 'oxide-dark' : 'oxide',
-                    content_css: mode === 'dark' ? 'dark' : '',
+                    content_css: mode === 'dark' ? 'dark' : 'document',
                   }}
                 />
               </FormControl>

@@ -40,7 +40,7 @@ export async function getQuestions(params: GetQuestionsParams) {
     }
 
     let sortOptions = {};
-
+    //! need  to make it dynamic
     switch (filter) {
       case 'newest':
         sortOptions = { createdAt: -1 };
