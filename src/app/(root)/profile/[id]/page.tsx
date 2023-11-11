@@ -2,10 +2,10 @@ import { SignedIn, auth } from '@clerk/nextjs';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import AnswersTab from '@/components/shared/AnswersTab';
-import ProfileLink from '@/components/shared/ProfileLink';
-import QuestionTab from '@/components/shared/QuestionTab';
-import Stats from '@/components/shared/Stats';
+import AnswersTab from '@/components/view/shared/AnswersTab';
+import ProfileLink from '@/components/view/shared/ProfileLink';
+import QuestionTab from '@/components/view/shared/QuestionTab';
+import Stats from '@/components/view/shared/Stats';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { getUserInfo } from '@/lib/actions/user.action';

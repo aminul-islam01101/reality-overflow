@@ -5,9 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { Button } from '../ui/button';
-
 import { sidebarLinks } from '@/constants';
+import { Button } from '@/components/ui/button';
 
 const LeftSidebar = () => {
   const { userId } = useAuth();

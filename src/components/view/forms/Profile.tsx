@@ -6,8 +6,6 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 
-import { Textarea } from '../ui/textarea';
-
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -20,6 +18,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { updateUser } from '@/lib/actions/user.action';
 import { ProfileSchema } from '@/lib/validations';
+import { Textarea } from '@/components/ui/textarea';
 
 interface Props {
   clerkId: string;

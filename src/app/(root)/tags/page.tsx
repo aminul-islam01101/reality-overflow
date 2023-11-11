@@ -1,12 +1,12 @@
 import Link from 'next/link';
 
-import Filter from '@/components/shared/Filter';
-import NoResult from '@/components/shared/NoResult';
-import Pagination from '@/components/shared/Pagination';
-import LocalSearchbar from '@/components/shared/search/LocalSearchbar';
 import { TagFilters } from '@/constants/filters';
 import { getAllTags } from '@/lib/actions/tag.actions';
 import { SearchParamsProps } from '@/types';
+import LocalSearchbar from '@/components/view/shared/search/LocalSearchbar';
+import Filter from '@/components/view/shared/Filter';
+import NoResult from '@/components/view/shared/NoResult';
+import Pagination from '@/components/view/shared/Pagination';
 
 const Page = async ({ searchParams }: SearchParamsProps) => {
   const result = await getAllTags({

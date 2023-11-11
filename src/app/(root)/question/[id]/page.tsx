@@ -2,12 +2,12 @@ import { auth } from '@clerk/nextjs';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import Answer from '@/components/forms/Answer';
-import AllAnswers from '@/components/shared/AllAnswers';
-import Metric from '@/components/shared/Metric';
-import ParseHTML from '@/components/shared/ParseHTML';
-import RenderTag from '@/components/shared/RenderTag';
-import Votes from '@/components/shared/Votes';
+import Answer from '@/components/view/forms/Answer';
+import AllAnswers from '@/components/view/shared/AllAnswers';
+import Metric from '@/components/view/shared/Metric';
+import ParseHTML from '@/components/view/shared/ParseHTML';
+import RenderTag from '@/components/view/shared/RenderTag';
+import Votes from '@/components/view/shared/Votes';
 import { getQuestionById } from '@/lib/actions/question.action';
 import { getUserById } from '@/lib/actions/user.action';
 import { formatAndDivideNumber, getTimestamp } from '@/lib/utils';

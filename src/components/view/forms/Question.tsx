@@ -7,9 +7,6 @@ import React, { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 
-import { Badge } from '../ui/badge';
-import { Button } from '../ui/button';
-
 import {
   Form,
   FormControl,
@@ -23,6 +20,8 @@ import { Input } from '@/components/ui/input';
 import { useTheme } from '@/context/ThemeProvider';
 import { createQuestion, editQuestion } from '@/lib/actions/question.action';
 import { QuestionsSchema } from '@/lib/validations';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 interface Props {
   type?: string;

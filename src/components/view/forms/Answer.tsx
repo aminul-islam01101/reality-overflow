@@ -8,12 +8,11 @@ import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-import { Button } from '../ui/button';
-import { Form, FormControl, FormField, FormItem, FormMessage } from '../ui/form';
-
 import { useTheme } from '@/context/ThemeProvider';
 import { createAnswer } from '@/lib/actions/answer.action';
 import { AnswerSchema } from '@/lib/validations';
+import { Button } from '@/components/ui/button';
+import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
 
 interface Props {
   question: string;

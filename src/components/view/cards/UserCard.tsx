@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
 import RenderTagWithoutLink from '../shared/RenderTagWithoutLink';
-import { Badge } from '../ui/badge';
 
+import { Badge } from '@/components/ui/badge';
 import { getTopInteractedTags } from '@/lib/actions/tag.actions';
 
 interface Props {

@@ -1,8 +1,8 @@
 import { auth } from '@clerk/nextjs';
 
-import Profile from '@/components/forms/Profile';
 import { getUserById } from '@/lib/actions/user.action';
 import { ParamsProps } from '@/types';
+import Profile from '@/components/view/forms/Profile';
 
 const Page = async ({ params }: ParamsProps) => {
   const { userId } = auth();

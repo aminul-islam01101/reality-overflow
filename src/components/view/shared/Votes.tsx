@@ -4,13 +4,12 @@ import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
-import { toast } from '../ui/use-toast';
-
 import { downvoteAnswer, upvoteAnswer } from '@/lib/actions/answer.action';
 import { viewQuestion } from '@/lib/actions/interaction.action';
 import { downvoteQuestion, upvoteQuestion } from '@/lib/actions/question.action';
 import { toggleSaveQuestion } from '@/lib/actions/user.action';
 import { formatAndDivideNumber } from '@/lib/utils';
+import { toast } from '@/components/ui/use-toast';
 
 interface Props {
   type: string;

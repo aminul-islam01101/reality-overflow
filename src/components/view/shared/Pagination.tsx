@@ -2,9 +2,8 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 
-import { Button } from '../ui/button';
-
 import { formUrlQuery } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 
 interface Props {
   pageNumber: number;

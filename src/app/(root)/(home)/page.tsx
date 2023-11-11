@@ -1,16 +1,16 @@
 import { auth } from '@clerk/nextjs';
 import Link from 'next/link';
 
-import QuestionCard from '@/components/cards/QuestionCard';
-import HomeFilters from '@/components/home/HomeFilters';
-import Filter from '@/components/shared/Filter';
-import NoResult from '@/components/shared/NoResult';
-import LocalSearchbar from '@/components/shared/search/LocalSearchbar';
 import { Button } from '@/components/ui/button';
 import { HomePageFilters } from '@/constants/filters';
 import { getQuestions, getRecommendedQuestions } from '@/lib/actions/question.action';
 import { SearchParamsProps } from '@/types';
-import Pagination from '@/components/shared/Pagination';
+import LocalSearchbar from '@/components/view/shared/search/LocalSearchbar';
+import Filter from '@/components/view/shared/Filter';
+import HomeFilters from '@/components/view/home/HomeFilters';
+import QuestionCard from '@/components/view/cards/QuestionCard';
+import NoResult from '@/components/view/shared/NoResult';
+import Pagination from '@/components/view/shared/Pagination';
 
 export default async function Home({ searchParams }: SearchParamsProps) {
   const { userId } = auth();
