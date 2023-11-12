@@ -14,15 +14,15 @@ import {
 
 export function ThemeSwitcher() {
   const { setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  //   const [mounted, setMounted] = useState(false);
 
-  // useEffect only runs on the client, so now we can safely show the UI
-  // with this trick we are avoiding hydration errors
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  //   // useEffect only runs on the client, so now we can safely show the UI
+  //   // with this trick we are avoiding hydration errors
+  //   useEffect(() => {
+  //     setMounted(true);
+  //   }, []);
 
-  if (!mounted) return null;
+  //   if (!mounted) return null;
 
   return (
     <DropdownMenu>
