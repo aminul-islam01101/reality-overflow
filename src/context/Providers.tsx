@@ -4,6 +4,7 @@ import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import { ReactNode } from 'react';
 import { Provider } from 'react-redux';
 
+import { Toaster } from '@/components/ui/toaster';
 import { store } from '@/redux/store';
 
 const Providers = ({ children }: { children: ReactNode }) => {
@@ -26,6 +27,7 @@ const Providers = ({ children }: { children: ReactNode }) => {
             disableTransitionOnChange
           >
             {children}
+            <Toaster />
           </NextThemesProvider>
           {/* <ThemeProvider>{children}</ThemeProvider> */}
         </Provider>
