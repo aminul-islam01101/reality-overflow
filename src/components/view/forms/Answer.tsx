@@ -2,17 +2,17 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Editor } from '@tinymce/tinymce-react';
+import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-import { useTheme } from '@/context/ThemeProvider';
-import { createAnswer } from '@/lib/actions/answer.action';
-import { AnswerSchema } from '@/lib/validations';
 import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
+import { createAnswer } from '@/lib/actions/answer.action';
+import { AnswerSchema } from '@/lib/validations';
 
 interface Props {
   question: string;
@@ -24,7 +24,7 @@ const Answer = ({ question, questionId, authorId }: Props) => {
   const pathname = usePathname();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmittingAI, setSetIsSubmittingAI] = useState(false);
-  const { mode } = useTheme();
+  const { theme } = useTheme();
   const editorRef = useRef(null);
   const form = useForm<z.infer<typeof AnswerSchema>>({
     resolver: zodResolver(AnswerSchema),
@@ -158,8 +158,8 @@ const Answer = ({ question, questionId, authorId }: Props) => {
                         'codesample | bold italic forecolor | alignleft aligncenter |' +
                         'alignright alignjustify | bullist numlist',
                       content_style: 'body { font-family:Inter; font-size:16px }',
-                      skin: mode === 'dark' ? 'oxide-dark' : 'oxide',
-                      content_css: mode === 'dark' ? 'dark' : 'document',
+                      skin: theme === 'dark' ? 'oxide-dark' : 'oxide',
+                      content_css: theme === 'dark' ? 'dark' : 'document',
                     }}
                   />
                 </FormControl>

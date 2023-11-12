@@ -1,12 +1,15 @@
 'use client';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Editor } from '@tinymce/tinymce-react';
+import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import React, { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
@@ -17,11 +20,8 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { useTheme } from '@/context/ThemeProvider';
 import { createQuestion, editQuestion } from '@/lib/actions/question.action';
 import { QuestionsSchema } from '@/lib/validations';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 
 interface Props {
   type?: string;
@@ -30,7 +30,7 @@ interface Props {
 }
 
 const Question = ({ type, mongoUserId, questionDetails }: Props) => {
-  const { mode } = useTheme();
+  const { theme } = useTheme();
   const editorRef = useRef(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -182,8 +182,8 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
                       'codesample | bold italic forecolor | alignleft aligncenter |' +
                       'alignright alignjustify | bullist numlist',
                     content_style: 'body { font-family:Inter; font-size:16px }',
-                    skin: mode === 'dark' ? 'oxide-dark' : 'oxide',
-                    content_css: mode === 'dark' ? 'dark' : 'document',
+                    skin: theme === 'dark' ? 'oxide-dark' : 'oxide',
+                    content_css: theme === 'dark' ? 'dark' : 'document',
                   }}
                 />
               </FormControl>
