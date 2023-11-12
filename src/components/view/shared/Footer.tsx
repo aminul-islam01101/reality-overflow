@@ -1,7 +1,9 @@
-import React from 'react';
-
 const Footer = () => {
-  return <div className=" bottom-0 w-full pt-5 bg-gray-500">Footer</div>;
+  return (
+    <div className=" bottom-0 grid w-full place-items-center bg-gray-500 py-5">
+      copyright@Footer.com
+    </div>
+  );
 };
 
 export default Footer;
