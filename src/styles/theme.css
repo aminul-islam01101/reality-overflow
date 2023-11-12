@@ -60,7 +60,7 @@
   }
 
   .text-dark500_light700 {
-    @apply text-dark-500 dark:text-light-700 !important;
+    @apply text-dark-300 dark:text-light-700 !important;
   }
 
   .text-dark500_light500 {
@@ -192,7 +192,7 @@
   }
 
   .primary-gradient {
-    background: linear-gradient(129deg, #ff7000 0%, #e2995f 100%);
+    background: linear-gradient(129deg, #5E807F 0%, #8CA692 100%);
   }
 
   .dark-gradient {

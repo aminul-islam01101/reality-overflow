@@ -7,6 +7,7 @@ import '../styles/prism.css';
 import './globals.css';
 
 import Providers from '@/context/Providers';
+import Footer from '@/components/view/shared/Footer';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -32,8 +33,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
-        <Providers>{children}</Providers>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} `}>
+        <Providers>
+          <div>
+            {children}
+            {/* <Footer/> */}
+          </div>
+        </Providers>
       </body>
     </html>
   );
