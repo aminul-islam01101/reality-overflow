@@ -34,7 +34,7 @@ module.exports = {
           850: '#FDFDFD',
           700: '#DCE3F1',
           500: '#7B8EC8',
-          400: '#60687f',
+          400: '#858EAD',
         },
         'accent-blue': '#1DA1F2',
       },

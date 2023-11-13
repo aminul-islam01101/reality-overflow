@@ -56,6 +56,7 @@ export async function getQuestions(params: GetQuestionsParams) {
     }
 
     const questions = await Question.find(query)
+      .maxTimeMS(60000)
       .populate({ path: 'tags', model: Tag })
       .populate({ path: 'author', model: User })
       .skip(skipAmount)
