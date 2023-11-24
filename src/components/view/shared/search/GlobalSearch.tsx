@@ -6,13 +6,18 @@ import { useEffect, useRef, useState } from 'react';
 
 import GlobalResult from './GlobalResult';
 
-import { formUrlQuery, removeKeysFromQuery } from '@/lib/utils';
 import { Input } from '@/components/ui/input';
+import { formUrlQuery, removeKeysFromQuery } from '@/lib/utils';
 
 const GlobalSearch = () => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  console.log(
+    '🌼 🔥🔥 file: GlobalSearch.tsx:16 🔥🔥 GlobalSearch 🔥🔥 searchParams🌼',
+    searchParams.toString()
+  );
+
   const searchContainerRef = useRef(null);
 
   const query = searchParams.get('q');

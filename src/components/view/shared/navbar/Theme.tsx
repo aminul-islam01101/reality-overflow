@@ -14,8 +14,6 @@ import { themes } from '@/constants';
 
 const Theme = () => {
   const { theme, setTheme } = useTheme();
-  console.log('🌼 🔥🔥 file: Theme.tsx:19 🔥🔥 Theme 🔥🔥 theme🌼', theme);
-
   return (
     <Menubar className="relative border-none bg-transparent shadow-none">
       <MenubarMenu>

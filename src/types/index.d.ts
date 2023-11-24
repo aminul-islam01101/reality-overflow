@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import { BADGE_CRITERIA } from '@/constants';
 
 export interface SidebarLink {
@@ -69,4 +71,14 @@ export type TGenericErrorResponse = {
   statusCode: number;
   errorName: string;
   errorMessages: TGenericErrorMessage[];
+};
+
+// ============================
+// reTypes
+export type TChildrenProps = {
+  children: ReactNode;
+};
+export type TChildrenClassProps = {
+  children: ReactNode;
+  classModifier?: string;
 };

@@ -2,15 +2,15 @@ import { auth } from '@clerk/nextjs';
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
+import QuestionCard from '@/components/view/cards/QuestionCard';
+import HomeFilters from '@/components/view/home/HomeFilters';
+import Filter from '@/components/view/shared/Filter';
+import NoResult from '@/components/view/shared/NoResult';
+import Pagination from '@/components/view/shared/Pagination';
+import LocalSearchbar from '@/components/view/shared/search/LocalSearchbar';
 import { HomePageFilters } from '@/constants/filters';
 import { getQuestions, getRecommendedQuestions } from '@/lib/actions/question.action';
 import { SearchParamsProps } from '@/types';
-import LocalSearchbar from '@/components/view/shared/search/LocalSearchbar';
-import Filter from '@/components/view/shared/Filter';
-import HomeFilters from '@/components/view/home/HomeFilters';
-import QuestionCard from '@/components/view/cards/QuestionCard';
-import NoResult from '@/components/view/shared/NoResult';
-import Pagination from '@/components/view/shared/Pagination';
 
 export default async function Home({ searchParams }: SearchParamsProps) {
   const { userId } = auth();
@@ -38,7 +38,7 @@ export default async function Home({ searchParams }: SearchParamsProps) {
 
   return (
     <>
-      <div className=" flex flex-col justify-between  min-h-[70vh]">
+      <div className=" flex min-h-[70vh] flex-col justify-between">
         <div>
           <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center ">
             <h1 className="h1-bold text-dark100_light900">All Questions all </h1>
@@ -63,7 +63,7 @@ export default async function Home({ searchParams }: SearchParamsProps) {
             />
           </div>
           <HomeFilters />
-          <div className="mt-10 flex w-full flex-col gap-6 mb-20">
+          <div className="mb-20 mt-10 flex w-full flex-col gap-6">
             {result?.questions?.length > 0 ? (
               result?.questions.map((question) => (
                 <QuestionCard

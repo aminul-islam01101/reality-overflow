@@ -68,14 +68,17 @@ export const getJoinedDate = (date: Date): string => {
   return joinedDate;
 };
 
-interface UrlQueryParams {
+type TUrlQueryParams = {
   params: string;
   key: string;
   value: string | null;
-}
+};
 
-export const formUrlQuery = ({ params, key, value }: UrlQueryParams) => {
+export const formUrlQuery = ({ params, key, value }: TUrlQueryParams) => {
+  console.log('🌼 🔥🔥 file: utils.ts:78 🔥🔥 formUrlQuery 🔥🔥 params🌼', params);
+
   const currentUrl = qs.parse(params);
+  console.log('🌼 🔥🔥 file: utils.ts:81 🔥🔥 formUrlQuery 🔥🔥 currentUrl🌼', currentUrl);
 
   currentUrl[key] = value;
 
@@ -88,12 +91,12 @@ export const formUrlQuery = ({ params, key, value }: UrlQueryParams) => {
   );
 };
 
-interface RemoveUrlQueryParams {
+interface RemoveTUrlQueryParams {
   params: string;
   keysToRemove: string[];
 }
 
-export const removeKeysFromQuery = ({ params, keysToRemove }: RemoveUrlQueryParams) => {
+export const removeKeysFromQuery = ({ params, keysToRemove }: RemoveTUrlQueryParams) => {
   const currentUrl = qs.parse(params);
 
   keysToRemove.forEach((key) => {
@@ -109,14 +112,14 @@ export const removeKeysFromQuery = ({ params, keysToRemove }: RemoveUrlQueryPara
   );
 };
 
-interface BadgeParam {
+type TBadgeParam = {
   criteria: {
     type: keyof typeof BADGE_CRITERIA;
     count: number;
   }[];
-}
+};
 
-export const assignBadges = (params: BadgeParam) => {
+export const assignBadges = (params: TBadgeParam) => {
   const badgeCounts: BadgeCounts = {
     GOLD: 0,
     SILVER: 0,
